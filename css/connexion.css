@@ -1,3 +1,71 @@
-/* FIND MY CAR — css/connexion.css
-   À REMPLACER par le lot P6 (Onglet Connexion) — voir docs/MODE-OPERATOIRE.md §8.
-   Vide pour l’instant : le site fonctionne sans lui. */
+/* ==========================================================================
+   FIND MY CAR — css/connexion.css
+   Lot : P6 (onglet Connexion). Badge du compte dans l'en-tête, formulaires
+   de connexion et d'inscription, carte « Mon compte ».
+   ========================================================================== */
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .25);
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-chip:hover { background: rgba(255, 255, 255, .18); }
+.chip-role {
+  background: var(--accent);
+  color: #fff;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: .05rem .45rem;
+  border-radius: 999px;
+}
+
+.auth-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.auth-layout h2,
+.account-card h2 { color: var(--navy); font-size: 1.3rem; }
+.account-card { max-width: 720px; }
+.account-card .specs dd { overflow-wrap: anywhere; }
+
+.demo-accounts {
+  margin-top: 1.25rem;
+  padding: .85rem 1rem;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  font-size: .88rem;
+}
+.demo-accounts p { margin: 0 0 .35rem; }
+.demo-accounts ul { margin: 0; padding-left: 1.1rem; }
+.demo-accounts code { font-size: .82rem; overflow-wrap: anywhere; }
+
+
+.security-note {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  max-width: 60rem;
+}
+
+/* En-tête : 4 onglets + compte connecté */
+
+@media (max-width: 900px) {
+  .auth-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .user-chip { align-self: center; }
+}
