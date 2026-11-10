@@ -9,19 +9,19 @@
       "id": "P4-1",
       "titre": "Accueil et catalogue (pages/vehicules.html, css/vehicules.css)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P4-2",
       "titre": "Cartes, filtres, détails, bouton Réserver (js/ui/vehicules.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P4-3",
       "titre": "Écrire tests/e2e/vehicules.test.js",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     }
   ],
   "tests": [
@@ -29,8 +29,8 @@
       "id": "vehicules.e2e",
       "scenario": "Catalogue, photos, filtres, détails, Réserver",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     }
   ],
   "anomalies": []
