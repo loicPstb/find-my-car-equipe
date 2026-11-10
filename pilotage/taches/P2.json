@@ -9,13 +9,13 @@
       "id": "P2-1",
       "titre": "Écrire js/db/core.js (sql.js, IndexedDB, enregistrement des modules)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P2-2",
       "titre": "Écrire tests/unit/core.test.js",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P2-3",
@@ -29,8 +29,8 @@
       "id": "core",
       "scenario": "Création, requêtes, réinitialisation de la base",
       "type": "Automatisé (unitaire)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     }
   ],
   "anomalies": []
