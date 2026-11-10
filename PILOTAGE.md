@@ -12,12 +12,14 @@
 
 | Vague | Lots | Fusionné dans `develop` | CI verte | Date |
 |---|---|---|---|---|
-| 0 | P1 socle | ☐ | ☐ | |
-| 1 | P2 base de données · P5 comptes · P8 contact | ☐ | ☐ | |
-| 2 | P3 véhicules et photos | ☐ | ☐ | |
-| 3 | P4 onglet Véhicules · P6 onglet Connexion | ☐ | ☐ | |
-| 4 | P7 réservations | ☐ | ☐ | |
-| 5 | P8 parcours complet et recette · P1 version 1.0.0 | ☐ | ☐ | |
+| 0 | P1 socle | ☑ | ☑ local (13/13) | 10/11/2026 |
+| 1 | P2 base de données · P5 comptes · P8 contact | ☑ | ☑ local (31/31) | 10/11/2026 |
+| 2 | P3 véhicules et photos | ☑ | ☑ local (37/37) | 10/11/2026 |
+| 3 | P4 onglet Véhicules · P6 onglet Connexion | ☑ | ☑ local (51/51) | 10/11/2026 |
+| 4 | P7 réservations | ☑ | ☑ local (66/66) | 10/11/2026 |
+| 5 | P8 parcours complet · P1 version 1.0.0 | ☑ (recette manuelle à faire) | ☑ local (71/71) | 10/11/2026 |
+
+> « CI verte local » : même page de tests et même lecture du titre que la CI, exécutées dans Chrome sur le poste. La CI **sur GitHub** reste à constater après le premier push (P1).
 
 ## Points d'attention
 
@@ -33,6 +35,8 @@
 
 ## Prochaines étapes
 
-1. P1 : créer le dépôt, pousser le socle, protéger `main` et `develop`.
-2. Vague 1 : P2, P5 et P8 ouvrent leur Pull Request.
-3. P8 : mettre à jour ce fichier à la fin de chaque vague.
+1. P1 : créer le dépôt GitHub, pousser `main`, `develop` et le tag `v1.0.0`, inviter les membres, renseigner `.github/CODEOWNERS`, protéger les branches, puis constater la CI verte dans *Actions*.
+2. P1 : activer GitHub Pages (`main` / racine) et publier la release v1.0.0.
+3. P3 : `outils/verifier-photos.html` avec Internet, mettre à jour `img/CREDITS-PHOTOS.md` (M03).
+4. P2 : contrôle manuel *F12 → Application → IndexedDB → findmycar*.
+5. P8 : recette manuelle M01 à M07 (`tests/RAPPORT-TESTS.md`, §3).
