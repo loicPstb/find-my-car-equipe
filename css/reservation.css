@@ -1,3 +1,84 @@
-/* FIND MY CAR — css/reservation.css
-   À REMPLACER par le lot P7 (Réservations) — voir docs/MODE-OPERATOIRE.md §8.
-   Vide pour l’instant : le site fonctionne sans lui. */
+/* ==========================================================================
+   FIND MY CAR — css/reservation.css
+   Lot : P7 (onglet Réservation). Formulaire, récapitulatif du prix,
+   titulaire (compte connecté), liste des réservations.
+   ========================================================================== */
+
+.reservation-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.summary {
+  background: linear-gradient(135deg, #f7f9fd, #eef3fb);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: .5rem 0 1rem;
+}
+.summary-vehicle { font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
+.summary dl { margin: 0; }
+.summary dl div {
+  display: flex;
+  justify-content: space-between;
+  padding: .3rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.summary dt { color: var(--muted); }
+.summary dd { margin: 0; font-weight: 600; }
+.summary .total { border-bottom: none; padding-top: .6rem; }
+.summary .total dt { color: var(--navy); font-weight: 700; }
+.summary .total dd { font-size: 1.4rem; color: var(--accent-dark); font-weight: 800; }
+.availability { margin: .6rem 0 0; font-weight: 600; font-size: .95rem; }
+.availability:empty { display: none; }
+.availability.is-ok { color: var(--success); }
+.availability.is-error { color: var(--error); }
+
+.list-card h2 { color: var(--navy); font-size: 1.3rem; }
+.reservation-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+.reservation-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: .75rem;
+  align-items: center;
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fbfcfe;
+}
+.reservation-item img { border-radius: 6px; width: 80px; height: 48px; object-fit: cover; }
+.reservation-item p { margin: 0; }
+.reservation-title { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.status {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: .1rem .5rem;
+  border-radius: 999px;
+}
+.status-active .status { background: var(--success-bg); color: var(--success); }
+.status-cancelled { opacity: .7; }
+.status-cancelled .status { background: var(--error-bg); color: var(--error); }
+.status-done .status { background: #eceff4; color: var(--muted); }
+
+.account-box {
+  background: var(--warning-bg);
+  color: var(--warning);
+  border-radius: var(--radius-sm);
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: .95rem;
+}
+.account-box.is-connected { background: var(--success-bg); color: #0b5a40; }
+.account-box a { color: inherit; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .reservation-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .reservation-item { grid-template-columns: 64px 1fr; }
+  .reservation-item img { width: 64px; height: 40px; }
+  .reservation-item .btn { grid-column: 1 / -1; }
+}
