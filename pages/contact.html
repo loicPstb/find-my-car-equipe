@@ -1,9 +1,55 @@
 <!--
   FIND MY CAR — pages/contact.html
-  À REMPLACER par le lot P8 (Onglet Nous contacter) — voir docs/MODE-OPERATOIRE.md §8.
+  Lot : P8. Onglet Nous contacter : présentation, coordonnées, formulaire mailto.
+  Ce fragment est inséré par js/app.js (P1) dans <section data-panel="contact">.
+  Comportement : js/ui/contact.js, css/contact.css
 -->
-<div class="container placeholder">
-  <h1>Nous contacter</h1>
-  <p><span class="lot">Lot P8 — Onglet Nous contacter</span></p>
-  <p>Cet onglet est en construction. Il apparaîtra ici après la fusion du lot P8 dans la branche <code>develop</code>.</p>
-</div>
+  <div class="container">
+    <div class="page-head">
+      <h1 id="contact-title">Nous contacter</h1>
+      <p class="muted">Une question sur un véhicule ou une réservation ? Notre équipe vous répond.</p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="card about-card">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+          <strong>FIND MY CAR</strong> est une agence de location de véhicules qui mise sur la simplicité :
+          un catalogue clair, des prix transparents et une réservation en quelques clics,
+          pour les particuliers comme pour les professionnels.
+        </p>
+        <h3>Nos coordonnées</h3>
+        <!-- Rempli par js/contact.js (coordonnées fictives modifiables dans ce fichier) -->
+        <ul id="contact-details" class="contact-details"></ul>
+      </div>
+
+      <form id="contact-form" class="card form-card" novalidate>
+        <h2>Écrire un message</h2>
+        <div id="contact-message" class="alert" role="alert" hidden></div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="contact-name">Nom <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="contact-name" name="name" autocomplete="name" maxlength="80" required>
+          </div>
+          <div class="field">
+            <label for="contact-email">Adresse e-mail <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="contact-email" name="email" autocomplete="email" maxlength="120" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="contact-subject">Objet <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="contact-subject" name="subject" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="contact-body">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="contact-body" name="message" rows="6" maxlength="2000" required></textarea>
+        </div>
+        <p class="hint">
+          Le bouton ouvre votre logiciel de messagerie avec le message pré-rempli.
+          Le message n'est envoyé que lorsque vous cliquez sur « Envoyer » dans votre messagerie.
+        </p>
+        <button type="submit" class="btn btn-primary btn-block">Préparer l'e-mail dans ma messagerie</button>
+      </form>
+    </div>
+  </div>

@@ -9,7 +9,7 @@
       "id": "P8-1",
       "titre": "Onglet Nous contacter + tests/e2e/contact.test.js",
       "priorite": "moyenne",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P8-2",
@@ -35,8 +35,8 @@
       "id": "contact.e2e",
       "scenario": "Formulaire de contact et mailto",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     },
     {
       "id": "parcours.e2e",

@@ -1,3 +1,27 @@
-/* FIND MY CAR — css/contact.css
-   À REMPLACER par le lot P8 (Onglet Nous contacter) — voir docs/MODE-OPERATOIRE.md §8.
-   Vide pour l’instant : le site fonctionne sans lui. */
+/* ==========================================================================
+   FIND MY CAR — css/contact.css
+   Lot : P8 (onglet Nous contacter).
+   ========================================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.about-card h2,
+.contact-layout form h2 { color: var(--navy); font-size: 1.3rem; }
+.about-card h3 { color: var(--navy); font-size: 1.05rem; margin-top: 1.25rem; }
+.contact-details { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+.contact-details li { display: flex; flex-direction: column; }
+.contact-details .label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
