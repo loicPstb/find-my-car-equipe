@@ -33,13 +33,13 @@
       "id": "P1-5",
       "titre": "Relire et fusionner les Pull Requests dans l’ordre des vagues",
       "priorite": "haute",
-      "statut": "en_cours"
+      "statut": "termine"
     },
     {
       "id": "P1-6",
       "titre": "Publier la version v1.0.0 (develop → main, tag, GitHub Pages)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "en_cours"
     }
   ],
   "tests": [
