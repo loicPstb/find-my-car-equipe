@@ -1,9 +1,89 @@
 <!--
   FIND MY CAR — pages/connexion.html
-  À REMPLACER par le lot P6 (Onglet Connexion) — voir docs/MODE-OPERATOIRE.md §8.
+  Lot : P6. Onglet Connexion : connexion, inscription, Mon compte.
+  Ce fragment est inséré par js/app.js (P1) dans <section data-panel="connexion">.
+  Comportement : js/ui/connexion.js, css/connexion.css
 -->
-<div class="container placeholder">
-  <h1>Connexion</h1>
-  <p><span class="lot">Lot P6 — Onglet Connexion</span></p>
-  <p>Cet onglet est en construction. Il apparaîtra ici après la fusion du lot P6 dans la branche <code>develop</code>.</p>
-</div>
+  <div class="container">
+    <div class="page-head">
+      <h1 id="connexion-title">Connexion</h1>
+      <p class="muted">Connectez-vous pour réserver et retrouver vos réservations.</p>
+    </div>
+
+    <!-- Message général (ex. : « connectez-vous pour finaliser votre réservation ») -->
+    <div id="auth-notice" class="alert" role="status" hidden></div>
+
+    <!-- Visiteur non connecté : connexion + inscription -->
+    <div id="auth-guest" class="auth-layout">
+      <form id="login-form" class="card form-card" novalidate>
+        <h2>Se connecter</h2>
+        <div id="login-message" class="alert" role="alert" hidden></div>
+        <div class="field">
+          <label for="login-email">Adresse e-mail</label>
+          <input type="email" id="login-email" name="email" autocomplete="username" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="login-password">Mot de passe</label>
+          <input type="password" id="login-password" name="password" autocomplete="current-password" maxlength="128" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="login-submit">Se connecter</button>
+        <div class="demo-accounts">
+          <p><strong>Comptes de démonstration</strong> (fictifs) :</p>
+          <ul>
+            <li>Client : <code>client@findmycar.example.com</code> / <code>ClientDemo2026!</code></li>
+            <li>Administrateur : <code>admin@findmycar.example.com</code> / <code>AdminDemo2026!</code></li>
+          </ul>
+        </div>
+      </form>
+
+      <form id="register-form" class="card form-card" novalidate>
+        <h2>Créer un compte</h2>
+        <div id="register-message" class="alert" role="alert" hidden></div>
+        <div class="field">
+          <label for="register-name">Nom complet <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="register-name" name="name" autocomplete="name" maxlength="80" required>
+        </div>
+        <div class="field">
+          <label for="register-email">Adresse e-mail <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="register-email" name="email" autocomplete="email" maxlength="120" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="register-password">Mot de passe <span class="req" aria-hidden="true">*</span></label>
+            <input type="password" id="register-password" name="password" autocomplete="new-password" maxlength="128" required aria-describedby="password-rules">
+          </div>
+          <div class="field">
+            <label for="register-confirm">Confirmation <span class="req" aria-hidden="true">*</span></label>
+            <input type="password" id="register-confirm" name="passwordConfirm" autocomplete="new-password" maxlength="128" required>
+          </div>
+        </div>
+        <p id="password-rules" class="hint">8 caractères minimum, dont au moins une lettre et un chiffre.</p>
+        <button type="submit" class="btn btn-primary btn-block" id="register-submit">Créer mon compte</button>
+      </form>
+    </div>
+
+    <!-- Utilisateur connecté : son compte -->
+    <div id="auth-user" class="card account-card" hidden>
+      <h2>Mon compte</h2>
+      <dl class="specs">
+        <div><dt>Nom</dt><dd id="account-name"></dd></div>
+        <div><dt>E-mail</dt><dd id="account-email"></dd></div>
+        <div><dt>Rôle</dt><dd id="account-role"></dd></div>
+        <div><dt>Réservations actives</dt><dd id="account-count"></dd></div>
+      </dl>
+      <p id="account-admin-note" class="alert alert-info" hidden>
+        Compte <strong>administrateur</strong> : l'onglet Réservation affiche les réservations de tous les clients
+        et vous permet d'annuler n'importe laquelle.
+      </p>
+      <div class="dialog-actions">
+        <a href="#reservation" class="btn btn-primary">Voir les réservations</a>
+        <button type="button" class="btn btn-light" id="logout-button">Se déconnecter</button>
+      </div>
+    </div>
+
+    <p class="security-note small">
+      🔒 Démonstration sans serveur : les mots de passe sont hachés (PBKDF2-SHA256, sel aléatoire) dans la base
+      SQLite de ce navigateur et ne sont jamais stockés en clair. Les comptes n'existent que sur cet appareil.
+      N'utilisez pas un mot de passe que vous employez ailleurs.
+    </p>
+  </div>

@@ -9,19 +9,19 @@
       "id": "P7-1",
       "titre": "Table reservations et règles métier (js/db/reservations.repo.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P7-2",
       "titre": "Onglet Réservation (pages/reservation.html, css, js/ui/reservation.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P7-3",
       "titre": "Écrire tests/unit/reservations.test.js et tests/e2e/reservation.test.js",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     }
   ],
   "tests": [
@@ -29,15 +29,15 @@
       "id": "reservations",
       "scenario": "Prix, dates, chevauchement, droits, persistance",
       "type": "Automatisé (unitaire)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     },
     {
       "id": "reservation.e2e",
       "scenario": "Parcours de réservation complet",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     }
   ],
   "anomalies": []

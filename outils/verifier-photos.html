@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+  FIND MY CAR — outils/verifier-photos.html   (Lot : P3)
+  Vérifie, AVEC INTERNET, que chaque photo du catalogue existe sur Wikimedia
+  Commons, et affiche son AUTEUR et sa LICENCE. Le tableau Markdown produit est
+  à copier dans img/CREDITS-PHOTOS.md (puis commit). Ouverture : Live Server,
+  puis http://127.0.0.1:5500/outils/verifier-photos.html
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://upload.wikimedia.org; connect-src 'self' https://commons.wikimedia.org; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Vérifier les photos — FIND MY CAR</title>
+  <link rel="stylesheet" href="../tests/tests.css">
+</head>
+<body>
+  <header>
+    <h1>Vérification des photos et de leurs licences</h1>
+    <p>Interroge Wikimedia Commons pour chacune des photos du catalogue (connexion Internet nécessaire).</p>
+    <button type="button" id="check">Vérifier les photos</button>
+    <a href="../index.html">← Retour à l’application</a>
+  </header>
+  <p id="summary" class="summary">Cliquez sur « Vérifier les photos ».</p>
+  <ul id="results" class="results"></ul>
+  <h2>Texte à copier dans <code>img/CREDITS-PHOTOS.md</code></h2>
+  <textarea id="markdown" rows="16" cols="120" readonly></textarea>
+  <script src="../js/utils.js"></script>
+  <script src="../js/db/vehicules.repo.js"></script>
+  <script src="../js/photos.js"></script>
+  <script src="verifier-photos.js"></script>
+</body>
+</html>

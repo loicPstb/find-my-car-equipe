@@ -1,9 +1,64 @@
 <!--
   FIND MY CAR — pages/reservation.html
-  À REMPLACER par le lot P7 (Réservations) — voir docs/MODE-OPERATOIRE.md §8.
+  Lot : P7. Onglet Réservation : formulaire, récapitulatif du prix, liste des réservations.
+  Ce fragment est inséré par js/app.js (P1) dans <section data-panel="reservation">.
+  Comportement : js/ui/reservation.js, css/reservation.css
 -->
-<div class="container placeholder">
-  <h1>Réservation</h1>
-  <p><span class="lot">Lot P7 — Réservations</span></p>
-  <p>Cet onglet est en construction. Il apparaîtra ici après la fusion du lot P7 dans la branche <code>develop</code>.</p>
-</div>
+  <div class="container">
+    <div class="page-head">
+      <h1 id="reservation-title">Réserver un véhicule</h1>
+      <p class="muted">Choisissez un véhicule et vos dates : le prix est calculé automatiquement et la disponibilité vérifiée.</p>
+    </div>
+
+    <div class="reservation-layout">
+      <!-- Formulaire de réservation -->
+      <form id="reservation-form" class="card form-card" novalidate>
+        <div id="reservation-message" class="alert" role="alert" hidden></div>
+
+        <div class="field">
+          <label for="res-vehicle">Véhicule <span class="req" aria-hidden="true">*</span></label>
+          <select id="res-vehicle" name="vehicleId" required>
+            <option value="">— Sélectionnez un véhicule —</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="res-start">Date de début <span class="req" aria-hidden="true">*</span></label>
+            <input type="date" id="res-start" name="startDate" required>
+          </div>
+          <div class="field">
+            <label for="res-end">Date de fin (restitution) <span class="req" aria-hidden="true">*</span></label>
+            <input type="date" id="res-end" name="endDate" required>
+          </div>
+        </div>
+
+        <!-- Titulaire de la réservation : le compte connecté -->
+        <div id="res-account" class="account-box" aria-live="polite"></div>
+
+        <!-- Récapitulatif calculé automatiquement (non modifiable) -->
+        <div class="summary" aria-live="polite">
+          <div class="summary-vehicle" id="summary-vehicle">Aucun véhicule sélectionné</div>
+          <dl>
+            <div><dt>Prix par jour</dt><dd id="summary-daily">–</dd></div>
+            <div><dt>Nombre de jours</dt><dd id="summary-days">–</dd></div>
+            <div class="total"><dt>Montant total</dt><dd id="summary-total">–</dd></div>
+          </dl>
+          <p id="summary-availability" class="availability"></p>
+        </div>
+
+        <p class="hint">* Champs obligatoires. Un jour est facturé par nuit : du 10 au 12 = 2 jours.</p>
+        <button type="submit" class="btn btn-primary btn-block" id="res-submit">Confirmer la réservation</button>
+        <p class="hint" id="res-guest-hint">Vous pouvez simuler le prix sans compte ; la connexion est demandée pour confirmer.</p>
+      </form>
+
+      <!-- Liste des réservations enregistrées dans SQLite -->
+      <aside class="card list-card" aria-labelledby="my-res-title">
+        <h2 id="my-res-title">Mes réservations</h2>
+        <p id="my-res-subtitle" class="muted small">Enregistrées dans la base SQLite de ce navigateur uniquement.</p>
+        <div id="list-message" class="alert" role="status" hidden></div>
+        <ul id="reservation-list" class="reservation-list"></ul>
+        <p id="reservation-empty" class="empty-state small">Aucune réservation pour le moment.</p>
+      </aside>
+    </div>
+  </div>

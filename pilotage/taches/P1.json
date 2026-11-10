@@ -15,7 +15,7 @@
       "id": "P1-2",
       "titre": "Pousser le socle (4 onglets « en construction », navigation, styles communs)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P1-3",
@@ -33,13 +33,13 @@
       "id": "P1-5",
       "titre": "Relire et fusionner les Pull Requests dans l’ordre des vagues",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P1-6",
       "titre": "Publier la version v1.0.0 (develop → main, tag, GitHub Pages)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "en_cours"
     }
   ],
   "tests": [
@@ -47,15 +47,15 @@
       "id": "socle.e2e",
       "scenario": "Navigation 4 onglets, responsive, aucune erreur",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     },
     {
       "id": "utils",
       "scenario": "Règles de calcul partagées",
       "type": "Automatisé (unitaire)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     }
   ],
   "anomalies": []

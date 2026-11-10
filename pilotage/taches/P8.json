@@ -9,7 +9,7 @@
       "id": "P8-1",
       "titre": "Onglet Nous contacter + tests/e2e/contact.test.js",
       "priorite": "moyenne",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P8-2",
@@ -21,13 +21,13 @@
       "id": "P8-3",
       "titre": "Test d’intégration du parcours complet (tests/e2e/parcours.test.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P8-4",
       "titre": "Mettre à jour PILOTAGE.md et tests/RAPPORT-TESTS.md",
       "priorite": "moyenne",
-      "statut": "a_faire"
+      "statut": "termine"
     }
   ],
   "tests": [
@@ -35,15 +35,15 @@
       "id": "contact.e2e",
       "scenario": "Formulaire de contact et mailto",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     },
     {
       "id": "parcours.e2e",
       "scenario": "Parcours complet client + agence",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     },
     {
       "id": "recette",

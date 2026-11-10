@@ -9,19 +9,19 @@
       "id": "P6-1",
       "titre": "Formulaires connexion / inscription et Mon compte (pages/connexion.html, css)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P6-2",
       "titre": "Session, badge dans l’en-tête, déconnexion (js/ui/connexion.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P6-3",
       "titre": "Écrire tests/e2e/connexion.test.js",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     }
   ],
   "tests": [
@@ -29,8 +29,8 @@
       "id": "connexion.e2e",
       "scenario": "Inscription, session, blocage, admin, réinitialisation",
       "type": "Automatisé (E2E)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     }
   ],
   "anomalies": []

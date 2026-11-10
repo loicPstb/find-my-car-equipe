@@ -9,19 +9,19 @@
       "id": "P5-1",
       "titre": "Hachage PBKDF2, politique de mot de passe, anti force brute (js/auth.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P5-2",
       "titre": "Table users, comptes de démo, inscription / connexion (js/db/utilisateurs.repo.js)",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     },
     {
       "id": "P5-3",
       "titre": "Écrire tests/unit/auth.test.js et utilisateurs.test.js",
       "priorite": "haute",
-      "statut": "a_faire"
+      "statut": "termine"
     }
   ],
   "tests": [
@@ -29,15 +29,15 @@
       "id": "auth",
       "scenario": "Hachage, temps constant, politique, blocage",
       "type": "Automatisé (unitaire)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     },
     {
       "id": "utilisateurs",
       "scenario": "Comptes de démo, inscription, connexion",
       "type": "Automatisé (unitaire)",
-      "resultat": "a_faire",
-      "date": ""
+      "resultat": "reussi",
+      "date": "2026-11-10"
     }
   ],
   "anomalies": []

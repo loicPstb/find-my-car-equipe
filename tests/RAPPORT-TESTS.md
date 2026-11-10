@@ -56,6 +56,24 @@ L'état final est **identique fichier par fichier** au dossier `solution-complet
 | Fonctionnement avec **Live Server** | Les tests de préparation utilisaient un autre serveur statique. Live Server ajoute un script de rechargement, bloqué par la CSP : ce blocage est attendu et sans effet sur le site | Chaque membre, au premier lancement |
 | Navigateurs autres que Chrome, vrai smartphone, vraie messagerie, lecteur d'écran | Tests manuels | P8 : recette ci-dessous |
 
+### 2.4 Rejeu dans le dépôt Git de l'équipe (10/11/2026)
+
+Le mode opératoire a été suivi dans un **dépôt Git local** : `main` et `develop`, une branche `feature/…` par lot, un commit par lot, une fusion *squash* dans `develop` (Pull Request simulée), puis la mise à jour du pilotage. Avant chaque fusion, la page `tests/?auto=1` a été ouverte dans Google Chrome 157 sans fenêtre, comme dans la CI. Le serveur était `python -m http.server` sur le port 8765, parce que le port 8080 était déjà pris sur le poste.
+
+| Ordre | Branche | Tests réussis | Fichiers modifiés |
+|---|---|---|---|
+| 0 | `main` / `develop` (socle) | 13 / 13 ✅ | socle complet |
+| 1 | `feature/p2-base-de-donnees` | 18 / 18 ✅ | uniquement ceux de P2 |
+| 2 | `feature/p5-comptes-securite` | 26 / 26 ✅ | uniquement ceux de P5 |
+| 3 | `feature/p8-contact` | 31 / 31 ✅ | uniquement ceux de P8 |
+| 4 | `feature/p3-vehicules-donnees` | 37 / 37 ✅ | uniquement ceux de P3 |
+| 5 | `feature/p4-onglet-vehicules` | 43 / 43 ✅ | uniquement ceux de P4 |
+| 6 | `feature/p6-onglet-connexion` | 51 / 51 ✅ | uniquement ceux de P6 |
+| 7 | `feature/p7-reservations` | 66 / 66 ✅ | uniquement ceux de P7 |
+| 8 | `feature/p8-integration` | 71 / 71 ✅ | uniquement ceux de P8 |
+
+Toujours **non vérifié** : la CI sur les machines de GitHub, les protections de branches et GitHub Pages (le dépôt n'est pas encore sur GitHub), les vraies photos et la recette manuelle ci-dessous.
+
 ## 3. Recette manuelle — à compléter par l'équipe
 
 | ID | Vérification | Comment faire | Testeur | Date | Résultat |

@@ -1,9 +1,82 @@
 <!--
   FIND MY CAR — pages/vehicules.html
-  À REMPLACER par le lot P4 (Onglet Véhicules) — voir docs/MODE-OPERATOIRE.md §8.
+  Lot : P4. Onglet Véhicules : accueil, catalogue, filtres, fenêtre de détails.
+  Ce fragment est inséré par js/app.js (P1) dans <section data-panel="vehicules">.
+  Comportement : js/ui/vehicules.js, css/vehicules.css
 -->
-<div class="container placeholder">
-  <h1>Véhicules</h1>
-  <p><span class="lot">Lot P4 — Onglet Véhicules</span></p>
-  <p>Cet onglet est en construction. Il apparaîtra ici après la fusion du lot P4 dans la branche <code>develop</code>.</p>
-</div>
+  <!-- Page d'accueil intégrée -->
+  <div class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Location de véhicules simple et transparente</p>
+        <h1 id="hero-title">Trouvez la voiture qu'il vous faut, au juste prix.</h1>
+        <p class="hero-lead">
+          Citadine, SUV, électrique ou utilitaire : comparez, vérifiez la disponibilité
+          et réservez en quelques clics. Le prix total est calculé automatiquement.
+        </p>
+        <div class="hero-actions">
+          <a href="#catalogue" class="btn btn-primary">Voir les véhicules</a>
+          <a href="#reservation" class="btn btn-ghost">Réserver maintenant</a>
+        </div>
+      </div>
+      <ul class="hero-stats" aria-label="FIND MY CAR en chiffres">
+        <li><strong id="stat-count">–</strong><span>véhicules disponibles</span></li>
+        <li><strong id="stat-min">–</strong><span>prix minimum par jour</span></li>
+        <li><strong id="stat-categories">–</strong><span>catégories</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" id="catalogue">
+    <div class="section-head">
+      <h2>Notre catalogue</h2>
+      <p id="vehicle-count" class="muted" aria-live="polite"></p>
+    </div>
+
+    <!-- Filtres du catalogue -->
+    <form id="filters" class="filters" aria-label="Filtrer le catalogue">
+      <div class="field">
+        <label for="filter-category">Catégorie</label>
+        <select id="filter-category" name="category">
+          <option value="all">Toutes les catégories</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-price">Gamme de prix</label>
+        <select id="filter-price" name="priceRange"></select>
+      </div>
+      <button type="reset" class="btn btn-light">Réinitialiser les filtres</button>
+    </form>
+
+    <!-- Grille des cartes véhicules (remplie par js/vehicles.js) -->
+    <div id="vehicle-grid" class="vehicle-grid"></div>
+    <p id="vehicle-empty" class="empty-state" hidden>
+      Aucun véhicule ne correspond à ces filtres. Essayez une autre catégorie ou gamme de prix.
+    </p>
+  </div>
+
+  <!-- Fenêtre de détails d'un véhicule -->
+  <dialog id="vehicle-dialog" class="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-body">
+      <button type="button" class="dialog-close" data-close aria-label="Fermer la fenêtre">×</button>
+      <div class="dialog-media">
+        <img id="dialog-image" src="" alt="" class="dialog-image">
+        <p id="dialog-credit" class="photo-credit"></p>
+      </div>
+      <div class="dialog-content">
+        <span id="dialog-category" class="badge"></span>
+        <h3 id="dialog-title"></h3>
+        <p id="dialog-description"></p>
+        <dl class="specs">
+          <div><dt>Places</dt><dd id="dialog-seats"></dd></div>
+          <div><dt>Boîte</dt><dd id="dialog-transmission"></dd></div>
+          <div><dt>Énergie</dt><dd id="dialog-fuel"></dd></div>
+          <div><dt>Prix</dt><dd id="dialog-price"></dd></div>
+        </dl>
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-light" data-close>Fermer</button>
+          <button type="button" class="btn btn-primary" id="dialog-reserve">Réserver ce véhicule</button>
+        </div>
+      </div>
+    </div>
+  </dialog>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-hidden="true">
+  <!-- Illustration générique FIND MY CAR (aucune marque, aucun logo) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef3fb"/>
+      <stop offset="1" stop-color="#dfe7f3"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <g transform="translate(24 20) scale(0.88)">
+  <ellipse cx="200" cy="208" rx="170" ry="10" fill="#0b1b33" opacity="0.12"/>
+  <path d="M30,180 L30,92 Q30,66 56,64 L262,62 Q286,62 300,80 L336,124 Q366,130 370,148 L370,180 Z" fill="#F2F2F2" stroke="#0b1b33" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M30,180 L30,92 Q30,66 56,64 L262,62 Q286,62 300,80 L336,124 Q366,130 370,148 L370,180 Z" fill="url(#shine)"/>
+  <path d="M262,72 Q280,72 290,86 L318,122 L262,122 Z" fill="#bcd3ee" stroke="#0b1b33" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="352" y="146" width="14" height="8" rx="3" fill="#ffd166"/>
+  <rect x="34" y="146" width="10" height="8" rx="3" fill="#ef4444"/>
+  <circle cx="96" cy="180" r="27" fill="#1b1f24"/><circle cx="96" cy="180" r="15" fill="#c9ced6"/><circle cx="96" cy="180" r="5" fill="#6b7280"/>
+  <circle cx="306" cy="180" r="27" fill="#1b1f24"/><circle cx="306" cy="180" r="15" fill="#c9ced6"/><circle cx="306" cy="180" r="5" fill="#6b7280"/>
+  </g>
+</svg>
