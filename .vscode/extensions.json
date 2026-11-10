@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "github.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "github.vscode-github-actions",
+    "esbenp.prettier-vscode"
+  ]
+}

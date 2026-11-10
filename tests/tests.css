@@ -1,0 +1,25 @@
+/* FIND MY CAR — tests/tests.css   (Lot : P1, socle) */
+:root { --navy: #0f2547; --ok: #12805c; --ko: #c62828; --border: #dde3ec; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 1.25rem; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #f4f6fa; color: #1a2233; line-height: 1.45; }
+header { background: var(--navy); color: #fff; padding: 1.25rem; border-radius: 12px; }
+header h1 { margin: 0 0 .4rem; font-size: 1.4rem; }
+header a { color: #ffd0b8; margin-left: 1rem; }
+.warning { color: #ffd98a; }
+button { font: inherit; font-weight: 700; background: #ff6b2c; color: #fff; border: none; border-radius: 999px; padding: .6rem 1.3rem; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+.summary { font-size: 1.15rem; font-weight: 700; padding: .9rem 1rem; border-radius: 10px; background: #e8f1fb; }
+.summary.is-ok { background: #e6f6ef; color: var(--ok); }
+.summary.is-ko { background: #fdecec; color: var(--ko); }
+main { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+h2 { color: var(--navy); font-size: 1.1rem; }
+.results, .files { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: .75rem 1rem .75rem 2rem; margin: 0; }
+.results { list-style: none; padding-left: 1rem; }
+.results li { padding: .15rem 0; }
+.results .suite { list-style: none; margin: .7rem 0 .2rem -1rem; color: var(--navy); }
+.results .fail { color: var(--ko); }
+.results .error { font-family: ui-monospace, Consolas, monospace; font-size: .85rem; }
+.ms { color: #8a94a6; font-size: .8rem; }
+.files .is-missing { color: #8a94a6; }
+iframe { display: block; height: 900px; border: 2px solid var(--border); border-radius: 10px; background: #fff; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }

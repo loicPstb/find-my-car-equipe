@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  FIND MY CAR — tests/index.html   (Lot : P1, socle)
+  Page de TESTS AUTOMATIQUES, dans le navigateur : rien à installer.
+  Ouverture : Live Server (VS Code) puis http://127.0.0.1:5500/tests/
+  ⚠️ Les tests effacent les données de démonstration de ce navigateur.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Tests — FIND MY CAR</title>
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="tests.css">
+</head>
+<body>
+  <header>
+    <h1>Tests automatiques — FIND MY CAR</h1>
+    <p>Tests unitaires (règles, base SQLite, sécurité) puis tests de l’application (clics et formulaires simulés dans le cadre en bas de page).</p>
+    <p class="warning">⚠️ Les tests effacent les comptes et réservations de démonstration de ce navigateur.</p>
+    <button type="button" id="run" disabled>Lancer tous les tests</button>
+    <a href="../index.html">← Retour à l’application</a>
+  </header>
+
+  <p id="summary" class="summary">Chargement des fichiers de test…</p>
+
+  <main>
+    <section>
+      <h2>Résultats</h2>
+      <ul id="results" class="results"></ul>
+    </section>
+    <section>
+      <h2>Fichiers de test (un par lot)</h2>
+      <ul id="files" class="files"></ul>
+    </section>
+  </main>
+
+  <h2 class="frame-title">Application testée</h2>
+  <iframe id="app-frame" title="Application testée" src="about:blank"></iframe>
+
+  <!-- Modules testés (tests unitaires) : mêmes fichiers que l'application -->
+  <script src="../lib/sql-wasm.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/db/core.js"></script>
+  <script src="../js/db/vehicules.repo.js"></script>
+  <script src="../js/db/utilisateurs.repo.js"></script>
+  <script src="../js/db/reservations.repo.js"></script>
+  <script src="../js/photos.js"></script>
+  <!-- Outils de test (P1), puis chargement des tests de chaque lot -->
+  <script src="mini-test.js"></script>
+  <script src="harness.js"></script>
+  <script src="runner.js"></script>
+</body>
+</html>

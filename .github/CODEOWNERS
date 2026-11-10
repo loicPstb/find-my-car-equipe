@@ -1,0 +1,66 @@
+# FIND MY CAR — Propriétaires des fichiers (Lot : P1)
+# GitHub demande automatiquement la relecture du propriétaire quand un fichier
+# est modifié dans une Pull Request.
+# ÉTAPE 1 du mode opératoire : remplacer chaque @PSEUDO-Pn par le pseudo GitHub
+# du membre correspondant (ex. @jdupont). Les lignes du bas l'emportent.
+
+# Par défaut : le chef de projet (socle, configuration, documentation)
+*                                 @PSEUDO-P1
+
+# P2 — Base de données
+/js/db/core.js                    @PSEUDO-P2
+/tests/unit/core.test.js          @PSEUDO-P2
+
+# P3 — Données véhicules et photos
+/js/db/vehicules.repo.js          @PSEUDO-P3
+/js/photos.js                     @PSEUDO-P3
+/img/vehicules/                   @PSEUDO-P3
+/img/CREDITS-PHOTOS.md            @PSEUDO-P3
+/outils/verifier-photos.html      @PSEUDO-P3
+/outils/verifier-photos.js        @PSEUDO-P3
+/tests/unit/vehicules.test.js     @PSEUDO-P3
+
+# P4 — Onglet Véhicules
+/pages/vehicules.html             @PSEUDO-P4
+/css/vehicules.css                @PSEUDO-P4
+/js/ui/vehicules.js               @PSEUDO-P4
+/tests/e2e/vehicules.test.js      @PSEUDO-P4
+
+# P5 — Comptes et sécurité
+/js/auth.js                       @PSEUDO-P5
+/js/db/utilisateurs.repo.js       @PSEUDO-P5
+/tests/unit/auth.test.js          @PSEUDO-P5
+/tests/unit/utilisateurs.test.js  @PSEUDO-P5
+
+# P6 — Onglet Connexion
+/pages/connexion.html             @PSEUDO-P6
+/css/connexion.css                @PSEUDO-P6
+/js/ui/connexion.js               @PSEUDO-P6
+/tests/e2e/connexion.test.js      @PSEUDO-P6
+
+# P7 — Réservations
+/js/db/reservations.repo.js       @PSEUDO-P7
+/pages/reservation.html           @PSEUDO-P7
+/css/reservation.css              @PSEUDO-P7
+/js/ui/reservation.js             @PSEUDO-P7
+/tests/unit/reservations.test.js  @PSEUDO-P7
+/tests/e2e/reservation.test.js    @PSEUDO-P7
+
+# P8 — Contact, qualité et pilotage
+/pages/contact.html               @PSEUDO-P8
+/css/contact.css                  @PSEUDO-P8
+/js/ui/contact.js                 @PSEUDO-P8
+/tests/e2e/contact.test.js        @PSEUDO-P8
+/tests/e2e/parcours.test.js       @PSEUDO-P8
+/tests/RAPPORT-TESTS.md           @PSEUDO-P8
+/PILOTAGE.md                      @PSEUDO-P8
+
+# Pilotage : chacun met à jour SON fichier
+/pilotage/taches/P1.json          @PSEUDO-P1
+/pilotage/taches/P2.json          @PSEUDO-P2
+/pilotage/taches/P3.json          @PSEUDO-P3
+/pilotage/taches/P4.json          @PSEUDO-P4
+/pilotage/taches/P5.json          @PSEUDO-P5
+/pilotage/taches/P6.json          @PSEUDO-P6
+/pilotage/taches/P7.json          @PSEUDO-P7
+/pilotage/taches/P8.json          @PSEUDO-P8

@@ -1,0 +1,37 @@
+{
+  "membre": "P2",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Base de données",
+  "branche": "feature/p2-base-de-donnees",
+  "taches": [
+    {
+      "id": "P2-1",
+      "titre": "Écrire js/db/core.js (sql.js, IndexedDB, enregistrement des modules)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P2-2",
+      "titre": "Écrire tests/unit/core.test.js",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P2-3",
+      "titre": "Vérifier dans le navigateur (F12 → Application → IndexedDB)",
+      "priorite": "moyenne",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "core",
+      "scenario": "Création, requêtes, réinitialisation de la base",
+      "type": "Automatisé (unitaire)",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}

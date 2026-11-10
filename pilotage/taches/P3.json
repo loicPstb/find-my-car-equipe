@@ -1,0 +1,56 @@
+{
+  "membre": "P3",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Données véhicules et photos",
+  "branche": "feature/p3-vehicules-donnees",
+  "taches": [
+    {
+      "id": "P3-1",
+      "titre": "Table vehicles + catalogue de 11 véhicules (js/db/vehicules.repo.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P3-2",
+      "titre": "Photos Wikimedia Commons avec crédits automatiques (js/photos.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P3-3",
+      "titre": "Vérifier les licences (page outils/verifier-photos.html) et publier img/CREDITS-PHOTOS.md",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P3-4",
+      "titre": "Dessins de secours img/vehicules/*.svg",
+      "priorite": "basse",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P3-5",
+      "titre": "Écrire tests/unit/vehicules.test.js",
+      "priorite": "haute",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "vehicules",
+      "scenario": "Catalogue, filtres, lecture des crédits photo",
+      "type": "Automatisé (unitaire)",
+      "resultat": "a_faire",
+      "date": ""
+    },
+    {
+      "id": "photos-reelles",
+      "scenario": "Photos et crédits affichés avec Internet (manuel)",
+      "type": "Manuel",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}

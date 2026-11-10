@@ -1,0 +1,57 @@
+{
+  "membre": "P8",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Contact, qualité et pilotage",
+  "branche": "feature/p8-contact puis feature/p8-integration",
+  "taches": [
+    {
+      "id": "P8-1",
+      "titre": "Onglet Nous contacter + tests/e2e/contact.test.js",
+      "priorite": "moyenne",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P8-2",
+      "titre": "Recette manuelle : Firefox, Edge, Safari, smartphone, messagerie, clavier",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P8-3",
+      "titre": "Test d’intégration du parcours complet (tests/e2e/parcours.test.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P8-4",
+      "titre": "Mettre à jour PILOTAGE.md et tests/RAPPORT-TESTS.md",
+      "priorite": "moyenne",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "contact.e2e",
+      "scenario": "Formulaire de contact et mailto",
+      "type": "Automatisé (E2E)",
+      "resultat": "a_faire",
+      "date": ""
+    },
+    {
+      "id": "parcours.e2e",
+      "scenario": "Parcours complet client + agence",
+      "type": "Automatisé (E2E)",
+      "resultat": "a_faire",
+      "date": ""
+    },
+    {
+      "id": "recette",
+      "scenario": "Recette manuelle multi-navigateurs",
+      "type": "Manuel",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}

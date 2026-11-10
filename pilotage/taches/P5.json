@@ -1,0 +1,44 @@
+{
+  "membre": "P5",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Comptes et sécurité",
+  "branche": "feature/p5-comptes-securite",
+  "taches": [
+    {
+      "id": "P5-1",
+      "titre": "Hachage PBKDF2, politique de mot de passe, anti force brute (js/auth.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P5-2",
+      "titre": "Table users, comptes de démo, inscription / connexion (js/db/utilisateurs.repo.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P5-3",
+      "titre": "Écrire tests/unit/auth.test.js et utilisateurs.test.js",
+      "priorite": "haute",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "auth",
+      "scenario": "Hachage, temps constant, politique, blocage",
+      "type": "Automatisé (unitaire)",
+      "resultat": "a_faire",
+      "date": ""
+    },
+    {
+      "id": "utilisateurs",
+      "scenario": "Comptes de démo, inscription, connexion",
+      "type": "Automatisé (unitaire)",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}

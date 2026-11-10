@@ -1,0 +1,35 @@
+# ==========================================================
+# FIND MY CAR — fichiers à NE PAS publier sur GitHub
+# ==========================================================
+
+# Dossiers d'outils qui ne doivent jamais être publiés
+node_modules/
+
+# Données personnelles / secrets : ne JAMAIS les publier
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# Exports de base de données réelle (la base de l'application vit dans le
+# navigateur ; un export pourrait contenir des noms et e-mails saisis)
+*.sqlite
+*.sqlite3
+*.db
+exports/
+
+# Réglages personnels de VS Code (on garde seulement les recommandations)
+.vscode/*
+!.vscode/extensions.json
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Journaux
+*.log
+
+# Archives
+*.zip

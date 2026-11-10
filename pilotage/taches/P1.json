@@ -1,0 +1,62 @@
+{
+  "membre": "P1",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Chef de projet et intégrateur",
+  "branche": "feature/p1-socle",
+  "taches": [
+    {
+      "id": "P1-1",
+      "titre": "Créer le dépôt GitHub, inviter les 7 membres, protéger main et develop",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P1-2",
+      "titre": "Pousser le socle (4 onglets « en construction », navigation, styles communs)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P1-3",
+      "titre": "Vérifier que la CI GitHub Actions est verte et la rendre obligatoire",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P1-4",
+      "titre": "Renseigner les pseudos GitHub dans .github/CODEOWNERS",
+      "priorite": "moyenne",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P1-5",
+      "titre": "Relire et fusionner les Pull Requests dans l’ordre des vagues",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P1-6",
+      "titre": "Publier la version v1.0.0 (develop → main, tag, GitHub Pages)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "socle.e2e",
+      "scenario": "Navigation 4 onglets, responsive, aucune erreur",
+      "type": "Automatisé (E2E)",
+      "resultat": "a_faire",
+      "date": ""
+    },
+    {
+      "id": "utils",
+      "scenario": "Règles de calcul partagées",
+      "type": "Automatisé (unitaire)",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}

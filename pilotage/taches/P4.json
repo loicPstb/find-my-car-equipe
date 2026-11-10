@@ -1,0 +1,37 @@
+{
+  "membre": "P4",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Onglet Véhicules",
+  "branche": "feature/p4-onglet-vehicules",
+  "taches": [
+    {
+      "id": "P4-1",
+      "titre": "Accueil et catalogue (pages/vehicules.html, css/vehicules.css)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P4-2",
+      "titre": "Cartes, filtres, détails, bouton Réserver (js/ui/vehicules.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P4-3",
+      "titre": "Écrire tests/e2e/vehicules.test.js",
+      "priorite": "haute",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "vehicules.e2e",
+      "scenario": "Catalogue, photos, filtres, détails, Réserver",
+      "type": "Automatisé (E2E)",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}

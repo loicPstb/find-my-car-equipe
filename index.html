@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+  FIND MY CAR — index.html
+  Lot : P1 (socle). Ce fichier ne change plus après la création du dépôt :
+  chaque onglet a son propre fichier pages/<onglet>.html (un responsable par
+  fichier), chargé automatiquement par js/app.js. Ainsi, 8 personnes peuvent
+  travailler en parallèle sans conflit Git sur cette page.
+  Onglets : #vehicules (P4) · #reservation (P7) · #contact (P8) · #connexion (P6)
+  Dépendances : css/*.css, lib/sql-wasm.js (+ .wasm), js/**/*.js, pages/*.html
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    SÉCURITÉ — Content Security Policy (voir docs/SECURITE.md) :
+    - scripts : uniquement les fichiers du site (aucun script en ligne, aucun eval) ;
+      'wasm-unsafe-eval' autorise SEULEMENT la compilation de SQLite (WebAssembly) ;
+    - styles : uniquement nos fichiers CSS ;
+    - images : le site, les images intégrées (data:) et les photos Wikimedia ;
+    - connexions réseau : le site et l'API Wikimedia Commons (crédits des photos) ;
+    - aucun plugin, aucune balise <base>, aucun envoi de formulaire vers un autre site.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data: https://upload.wikimedia.org; connect-src 'self' https://commons.wikimedia.org; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-src 'none'">
+  <!-- Les liens vers d'autres sites ne transmettent pas l'adresse de la page -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="FIND MY CAR — location de véhicules : catalogue, réservation en ligne, compte client et contact.">
+  <title>FIND MY CAR — Location de véhicules</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <!-- Une feuille de style par lot -->
+  <link rel="stylesheet" href="css/base.css">        <!-- P1 -->
+  <link rel="stylesheet" href="css/vehicules.css">   <!-- P4 -->
+  <link rel="stylesheet" href="css/reservation.css"> <!-- P7 -->
+  <link rel="stylesheet" href="css/contact.css">     <!-- P8 -->
+  <link rel="stylesheet" href="css/connexion.css">   <!-- P6 -->
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ===================== BARRE DE NAVIGATION (P1) ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#vehicules" aria-label="FIND MY CAR — accueil">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        <span>FIND <strong>MY CAR</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#vehicules"   class="nav-link" data-tab="vehicules">Véhicules</a>
+        <a href="#reservation" class="nav-link" data-tab="reservation">Réservation</a>
+        <a href="#contact"     class="nav-link" data-tab="contact">Nous contacter</a>
+        <a href="#connexion"   class="nav-link" data-tab="connexion">Connexion</a>
+      </nav>
+      <!-- Compte connecté : rempli par js/ui/connexion.js (P6) -->
+      <a href="#connexion" id="user-chip" class="user-chip" hidden></a>
+    </div>
+  </header>
+
+  <!-- Bandeau d'état : chargement, erreurs, avertissements -->
+  <div id="app-status" class="app-status" role="status" aria-live="polite">Chargement…</div>
+
+  <!-- Les 4 onglets : leur contenu vient de pages/<onglet>.html -->
+  <main id="main" tabindex="-1">
+    <section id="tab-vehicules"   class="tab-panel" data-panel="vehicules"   aria-label="Véhicules" hidden></section>
+    <section id="tab-reservation" class="tab-panel" data-panel="reservation" aria-label="Réservation" hidden></section>
+    <section id="tab-contact"     class="tab-panel" data-panel="contact"     aria-label="Nous contacter" hidden></section>
+    <section id="tab-connexion"   class="tab-panel" data-panel="connexion"   aria-label="Connexion" hidden></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 FIND MY CAR — projet pédagogique réalisé par une équipe de 8 personnes. Données fictives.</p>
+      <p class="small">
+        Les comptes et les réservations sont stockés uniquement dans ce navigateur (SQLite + IndexedDB) et ne sont pas partagés.
+        <button type="button" id="reset-demo" class="link-button" hidden>Réinitialiser les données de démonstration</button>
+      </p>
+      <p class="small"><a href="pilotage/" class="footer-link">Tableau de pilotage de l'équipe</a></p>
+    </div>
+  </footer>
+
+  <!--
+    Ordre de chargement IMPORTANT (tous en "defer", exécutés dans cet ordre) :
+    1. bibliothèques et outils partagés   2. base de données et dépôts (dans l'ordre des tables)
+    3. écrans (chacun s'enregistre auprès de App)   app.js démarre le tout à la fin du chargement.
+  -->
+  <script src="lib/sql-wasm.js" defer></script>               <!-- P1 : SQLite (sql.js) -->
+  <script src="js/utils.js" defer></script>                   <!-- P1 -->
+  <script src="js/app.js" defer></script>                     <!-- P1 : routeur + démarrage -->
+  <script src="js/auth.js" defer></script>                    <!-- P5 -->
+  <script src="js/db/core.js" defer></script>                 <!-- P2 -->
+  <script src="js/db/vehicules.repo.js" defer></script>       <!-- P3 -->
+  <script src="js/db/utilisateurs.repo.js" defer></script>    <!-- P5 -->
+  <script src="js/db/reservations.repo.js" defer></script>    <!-- P7 -->
+  <script src="js/photos.js" defer></script>                  <!-- P3 -->
+  <script src="js/ui/vehicules.js" defer></script>            <!-- P4 -->
+  <script src="js/ui/connexion.js" defer></script>            <!-- P6 -->
+  <script src="js/ui/reservation.js" defer></script>          <!-- P7 -->
+  <script src="js/ui/contact.js" defer></script>              <!-- P8 -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+# FIND MY CAR — Tests automatiques sur GitHub (Lot : P1)
+# À chaque Pull Request vers develop ou main, et à chaque fusion, GitHub ouvre
+# la page tests/ dans Chrome et vérifie que TOUS les tests sont réussis.
+# Aucun Node.js, npm ni Python : seulement Chrome et le serveur web Nginx,
+# déjà disponibles sur les machines de GitHub. Si un test échoue, la PR affiche
+# une croix rouge et ne peut pas être fusionnée (voir docs/MODE-OPERATOIRE.md, étape 1).
+name: Tests
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+jobs:
+  tests:
+    name: Tests du site dans Chrome
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Servir le site (serveur web Nginx, en lecture seule)
+        run: |
+          docker run -d --name site -p 8080:80 -v "$PWD":/usr/share/nginx/html:ro nginx:alpine
+          for i in $(seq 1 30); do curl -sf http://localhost:8080/index.html > /dev/null && break; sleep 1; done
+
+      - name: Lancer la page de tests dans Chrome (sans fenêtre)
+        run: bash .github/scripts/lancer-tests.sh "http://localhost:8080/tests/?auto=1"

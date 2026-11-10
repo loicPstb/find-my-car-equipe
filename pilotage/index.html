@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+  FIND MY CAR — pilotage/index.html   (Lot : P1, socle)
+  Rôle : tableau de bord de suivi du projet (pour l'ÉQUIPE, pas pour les clients).
+  Les données viennent de pilotage/taches/P1.json … P8.json : CHAQUE MEMBRE
+  met à jour SON fichier (dans sa branche, avec sa Pull Request). Huit
+  fichiers séparés = aucun conflit Git sur le suivi.
+  Ouverture : lancer Live Server dans VS Code, puis http://127.0.0.1:5500/pilotage/
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Sécurité : seuls les fichiers du site peuvent être chargés (voir docs/SECURITE.md) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Pilotage — FIND MY CAR</title>
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="pilotage.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Tableau de pilotage — FIND MY CAR</h1>
+      <a href="../index.html">← Retour à l'application</a>
+    </div>
+  </header>
+
+  <main class="wrap" id="app">
+    <p class="muted">Chargement de <code>pilotage/taches/*.json</code>…</p>
+  </main>
+
+  <script src="pilotage.js"></script>
+</body>
+</html>

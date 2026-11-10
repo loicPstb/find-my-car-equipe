@@ -1,0 +1,37 @@
+{
+  "membre": "P6",
+  "nom": "À compléter",
+  "pseudoGithub": "À compléter",
+  "role": "Onglet Connexion",
+  "branche": "feature/p6-onglet-connexion",
+  "taches": [
+    {
+      "id": "P6-1",
+      "titre": "Formulaires connexion / inscription et Mon compte (pages/connexion.html, css)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P6-2",
+      "titre": "Session, badge dans l’en-tête, déconnexion (js/ui/connexion.js)",
+      "priorite": "haute",
+      "statut": "a_faire"
+    },
+    {
+      "id": "P6-3",
+      "titre": "Écrire tests/e2e/connexion.test.js",
+      "priorite": "haute",
+      "statut": "a_faire"
+    }
+  ],
+  "tests": [
+    {
+      "id": "connexion.e2e",
+      "scenario": "Inscription, session, blocage, admin, réinitialisation",
+      "type": "Automatisé (E2E)",
+      "resultat": "a_faire",
+      "date": ""
+    }
+  ],
+  "anomalies": []
+}
